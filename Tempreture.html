@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Temprature Calculator</title>
+</head>
+
+<style>
+   *{
+      background-color: rgb(186, 233, 233);
+      text-align: center;
+      padding: 1rem;
+   }
+
+   input{
+      width: 24rem;
+      height: 2rem;
+      border-radius: 12px;
+      margin: 2rem;
+   }
+
+   button{
+      color: aliceblue;
+      background-color: rgb(5, 30, 56);
+      margin: 1rem;
+      width: 8rem;
+      font-weight: 600;
+      border-radius: 12px;
+   }
+
+   :hover.button{
+   background-color: burlywood;
+   transition: 1000ms;
+   color: black;
+   }
+
+   #result{
+      color: rgb(23, 22, 1);
+      font-size: 24px;
+      font-weight: 600;
+   }
+</style>
+
+<body>
+   <h3>Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.</h3>
+
+   <input id="temp" type="text" placeholder="Enter Temp"> <br>
+   <button class="button" type="button" onclick="calctife()">°C to °F</button> 
+   <button class="button" type="button" onclick="fetocalc()">°F to °C</button>
+
+   <div id="result"></div>
+
+   <script>
+      function calctife() {
+         temp = document.getElementById("temp").value;
+         document.getElementById("result").innerHTML = (9 * temp / 5) + 32 + " °F";
+      }
+
+      function fetocalc() {
+         temp = document.getElementById("temp").value;
+         document.getElementById("result").innerHTML = ((temp - 32) / 9) * 5 + "°C";
+      }
+   </script>
+</body>
+
+</html>
