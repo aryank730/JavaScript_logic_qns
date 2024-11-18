@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Distance Calculator</title>
+</head>
+<style>
+   body {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+      background: #dddab8;
+   }
+
+   button {
+      align-items: center;
+      height: 2rem;
+      width: 24rem;
+      background: #f0b7b7;
+      border-radius: 6px;
+   }
+
+   :hover.button {
+      background: #8fedd4;
+      transition: 500ms;
+      font-weight: 600;
+   }
+</style>
+
+<body>
+   <h2>Enter distance for converter</h2> <br>
+
+   <label for="dropdown">Select any prefrence: </label>
+
+   <select id="dropdown" onchange="updateInputField()">
+
+      <option value="" disabled selected> select any one</option>
+
+      <option selected="selected" value="CM">In CM</option>
+      <option value="IN">In Inches</option>
+      <option value="FE">In Feet</option>
+      <option value="ME">In Meter</option>
+   </select> <br><br>
+
+   <label for="number">Enter your measurement : </label>
+   <input type="number" id="number"> <br><br>
+
+   <button class="button" onclick="calc()">Calculate</button> <br><br> <br>
+
+   <input id="resultcm"></input>
+   <input id="resultin"></input>
+   <input id="resultfe"></input>
+   <input id="resultme"></input>
+
+
+   <script>
+      function calc() {
+         const dropdown = document.getElementById('dropdown');
+         const selectedValue = dropdown.value;
+
+         const enternum = parseFloat(document.getElementById('number').value);
+
+         if (selectedValue === 'CM') {
+            document.getElementById('resultcm').value = (enternum) + " Centi meter";
+            document.getElementById('resultin').value = (enternum * 0.3937007874).toFixed(2) + " Inches";
+            document.getElementById('resultfe').value = (enternum * 0.010936133).toFixed(2) + " Feet";
+            document.getElementById('resultme').value = (enternum * 0.01).toFixed(2) + " Meter";
+         } else if (selectedValue === 'IN') {
+            document.getElementById('resultcm').value = (enternum * 2.54).toFixed(2)+ " Centi meter";
+            document.getElementById('resultin').value = enternum + " Inches"; 
+            document.getElementById('resultfe').value = (enternum * 0.0833333).toFixed(2)+ " Feet";
+            document.getElementById('resultme').value = (enternum * 0.0254).toFixed(2)+ " Meter";
+         } else if (selectedValue === 'FE') {
+            document.getElementById('resultcm').value = (enternum * 30.48).toFixed(2) + " Centi meter";
+            document.getElementById('resultin').value = (enternum * 12).toFixed(2) + " Inches";
+            document.getElementById('resultfe').value = enternum + " Feet"; 
+            document.getElementById('resultme').value = (enternum * 0.3048).toFixed(2)+ " Meter";
+         } else if (selectedValue === 'ME') {
+            document.getElementById('resultcm').value = (enternum * 100).toFixed(2) + " Centi meter";
+            document.getElementById('resultin').value = (enternum * 39.3701).toFixed(2) + " Inches";
+            document.getElementById('resultfe').value = (enternum * 3.28084).toFixed(2)+ " Feet";
+            document.getElementById('resultme').value = enternum + " Meter"; 
+         } else {
+            alert("Please select a valid unit from the dropdown.");
+         }
+
+      }
+   </script>
+
+
+
+</body>
+
+</html>
