@@ -5,31 +5,57 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Geometrical Calculator</title>
+   <link rel="stylesheet" href="geographic.css">
 </head>
+
 
 <body>
    <h3>Calculate your Geometrical Calculation by enter your input field :</h3>
 
-   <div class="twod">
-      <button onclick="">Perimeter of a Square = 4(Side)</button>
-      <button onclick="">Perimeter of a Rectangle = 2(Length + Breadth)</button>
-      <button onclick="">Area of a Square = Side2</button>
-      <button onclick="">Area of a Rectangle = Length × Breadth.</button>
-      <button onclick="">Area of a Triangle = ½ × base × height</button>
-      <button onclick="">Area of a Trapezoid = ½ × (base1 + base2) × height.</button>
-      <button onclick="">Area of a Circle = A = π×r2</button>
-      <button onclick="">Circumference of a Circle = 2πr</button>
+   <br>
+   <div class="mainbox ">
+      <div class="menubar">
+         <h2>2D Based </h2>
+         <div class="twod">
+            <button onclick="perisqr()">Perimeter of a Square = 4(Side)</button><br>
+            <button onclick="perirec()">Perimeter of a Rectangle = 2(Length + Breadth)</button><br>
+            <button onclick="asqr()">Area of a Square = Side2</button>
+            <button onclick="arec()">Area of a Rectangle = Length × Breadth.</button>
+            <button onclick="ateg()">Area of a Triangle = ½ × base × height</button>
+            <button onclick="atpz()">Area of a Trapezoid = ½ × (base1 + base2) × height.</button>
+            <button onclick="aofc()">Area of a Circle = A = π×r2</button>
+            <button onclick="cofc()">Circumference of a Circle = 2πr</button>
 
+         </div>
+         <h3>3D Based</h3>
+         <div class="threed">
+            <button onclick="csac()"> Curved surface area of Cylinder = 2πrh</button>
+            <button onclick="tsac()">Total surface area of Cylinder = 2πr(r + h)</button>
+            <button onclick="voc()">Volume of Cylinder V = πrh </button>
+            <button onclick="csoc()">Curved surface area of Cone = πrl</button>
+            <button onclick="tsac()">Total surface area of Cone = πr(r+l)</button>
+            <button onclick="voc()">Volume of Cone = ⅓ π r2 h</button>
+         </div>
+      </div>
+      <div class="solution">
+
+         <div class="Perisqr">
+
+            <h3>Perimeter of a Square = <span style="color: rgb(30, 210, 147);">4(Side)</span> </h3>
+
+            <label for="sqrside">Enter Side :</label>
+            <input id="sqrside" type="number">
+
+            <button onclick="calcperosqrt()">Calculate</button>
+
+         </div>
+
+         <div id="result"></div>
+
+      </div>
    </div>
 
-   <div class="threed">
-      <button onclick=""> Curved surface area of Cylinder = 2πrh</button>
-      <button onclick="">Total surface area of Cylinder = 2πr(r + h)</button>
-      <button onclick="">Volume of Cylinder V = πrh </button>
-      <button onclick="">Curved surface area of Cone = πrl</button>
-      <button onclick="">Total surface area of Cone = πr(r+l)</button>
-      <button onclick="">Volume of Cone = ⅓ π r2 h</button>
-   </div>
+   <script src="Geometrical_Calculations/geometrical.js"></script>
 </body>
 
 </html>

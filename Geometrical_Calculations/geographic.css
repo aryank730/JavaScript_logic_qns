@@ -1,0 +1,30 @@
+body{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   background-color: antiquewhite;
+}
+
+.mainbox{
+   width: auto;
+   margin: auto;
+   display: flex;
+   justify-content: space-around;
+}
+.menubar{
+   margin: 2rem;
+   overflow-y: scroll;
+   height: 35rem;
+   width: 338rem;
+   padding: 1rem;
+}
+.solution{
+   padding: 2rem 1rem;
+   /* width: 42rem; */
+   /* width: auto; */
+}
+
+button{
+   /* padding: 1rem; */
+   margin: 0.5rem;
+}
